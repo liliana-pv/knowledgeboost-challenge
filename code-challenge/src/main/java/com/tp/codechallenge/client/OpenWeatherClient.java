@@ -9,7 +9,7 @@ import com.tp.codechallenge.client.dto.WeatherLocDto;
 import com.tp.codechallenge.config.FeignConfig;
 
 
-@FeignClient(value = "openweatherapi", url = "https://api.openweathermap.org/data/2.5", configuration = FeignConfig.class)
+@FeignClient(value = "openweatherapi", url = "${feign.url}", configuration = FeignConfig.class)
 public interface OpenWeatherClient {
     
     @RequestMapping(method = RequestMethod.GET, value = "/weather", produces = "application/json")

@@ -6,16 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 
-import com.tp.codechallenge.exceptions.dto.BackendErrorDto;
 import com.tp.codechallenge.exceptions.dto.ConstraintErrorDto;
 
 @ControllerAdvice
