@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.tp.codechallenge.client.dto.WeatherLocDto;
+import com.tp.codechallenge.config.FeignConfig;
 
 
-@FeignClient(value = "openweatherapi", url = "https://api.openweathermap.org/data/2.5")
+@FeignClient(value = "openweatherapi", url = "https://api.openweathermap.org/data/2.5", configuration = FeignConfig.class)
 public interface OpenWeatherClient {
     
     @RequestMapping(method = RequestMethod.GET, value = "/weather", produces = "application/json")

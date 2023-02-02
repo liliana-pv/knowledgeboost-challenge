@@ -3,8 +3,10 @@ package com.tp.codechallenge.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.annotation.JsonInclude;
+import com.tp.codechallenge.exceptions.FeignDecoder;
+
+import feign.codec.ErrorDecoder;
+
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
@@ -22,11 +24,8 @@ public class SpringConfig {
     }
 
     @Bean
-    public ObjectMapper objectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
-        return mapper;
+    public ErrorDecoder errorDecoder() {
+        return new FeignDecoder();
     }
    
 }
